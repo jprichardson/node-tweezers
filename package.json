@@ -1,0 +1,30 @@
+{
+    "name" : "tweezers", 
+    "version" : "0.0.1",
+    "description" : "Extract mustache tokens from a file or string.",
+    "homepage" : [
+        "https://github.com/jprichardson/node-tweezers"
+    ],
+    "repository" : {
+        "type" : "git", 
+        "url" : "https://github.com/jprichardson/node-tweezers"
+    },
+    "keywords" : ["mustache", "mustache.js", "hogan", "hogan.js", "handlebars", "handlebars.js", "templates", "tokens", "tweezers"],
+    "author" : "JP Richardson <jprichardson@gmail.com>",
+    "licenses" : [ {
+        "type" : "MIT",
+        "url" : "http://github.com/jprichardson/node-tweezers/raw/master/LICENSE"
+    }],
+    "dependencies" : {
+        "underscore": "1.3.x"
+     },
+     "devDepdencies":{
+        "mocha": "1.3.x",
+        "fs-extra": "0.1.x",
+        "path-extra": "0.0.x"
+    },
+    "main" : "./lib/tweezers",
+    "scripts": {
+        "test": "mocha test"
+    }
+}
