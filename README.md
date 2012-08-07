@@ -136,6 +136,7 @@ tweezers.readFilesAndExtract([testFile, testFile2], function(err, tokenObj) {
 Output:
 
 ```json
+{
     "/tmp/readme.md": ["name", "email", "email"],
     "/tmp/documenation.md": ["project", "name", "email"],
     "tokens": ["name", "email", "email", "project", "name", "email"]
