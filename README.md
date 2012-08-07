@@ -76,7 +76,7 @@ Output:
 
 ```json
 {
-    "/tmp/readme.md": ["name", "email", "email"]
+    "/tmp/readme.md": ["name", "email", "email"],
     "tokens": ["name", "email", "email"]
 }
 ```
@@ -105,7 +105,7 @@ Output:
 
 ```json
 {
-    "/tmp/readme.md": ["email", "name"]
+    "/tmp/readme.md": ["email", "name"],
     "tokens": ["email", "name"]
 }
 ```
@@ -136,8 +136,8 @@ tweezers.readFilesAndExtract([testFile, testFile2], function(err, tokenObj) {
 Output:
 
 ```json
-    "/tmp/readme.md": ["name", "email", "email"]
-    "/tmp/documenation.md": ["project", "name", "email"]
+    "/tmp/readme.md": ["name", "email", "email"],
+    "/tmp/documenation.md": ["project", "name", "email"],
     "tokens": ["name", "email", "email", "project", "name", "email"]
 }
 ```
@@ -169,8 +169,8 @@ Output:
 
 ```json
 {
-    "/tmp/readme.md": ["email", "name"]
-    "/tmp/documenation.md": ["email", "name", "project"]
+    "/tmp/readme.md": ["email", "name"],
+    "/tmp/documenation.md": ["email", "name", "project"],
     "tokens": ["email", "name", "project"]
 }
 ```
