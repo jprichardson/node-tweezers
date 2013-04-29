@@ -27,10 +27,10 @@ describe('tweezers', function(){
       
       var tokens = tweezers.extract(data)
       
-      assert(tokens.length === 3)
-      assert(tokens[0] === 'name')
-      assert(tokens[1] === 'email')
-      assert(tokens[2] === 'email')
+      T (tokens.length === 3)
+      T (tokens[0] === 'name')
+      T (tokens[1] === 'email')
+      T (tokens[2] === 'email')
     })
   })
 
@@ -42,9 +42,9 @@ describe('tweezers', function(){
       
       var tokens = tweezers.extractUniq(data)
       
-      assert(tokens.length === 2)
-      assert(tokens[0] === 'email')
-      assert(tokens[1] === 'name')
+      T (tokens.length === 2)
+      T (tokens[0] === 'email')
+      T (tokens[1] === 'name')
     })
   })
 
@@ -62,14 +62,14 @@ describe('tweezers', function(){
       fs.writeFileSync(testFile, data)
 
       tweezers.readFileAndExtract(testFile, function(err, tokenObj) {
-        assert(tokenObj[testFile])
+        T (tokenObj[testFile])
         var tokens = tokenObj[testFile]
-        assert(tokens.length === tokenObj.tokens.length)
+        T (tokens.length === tokenObj.tokens.length)
 
-        assert(tokens.length === 3)
-        assert(tokens[0] === 'name')
-        assert(tokens[1] === 'email')
-        assert(tokens[2] === 'email')
+        T (tokens.length === 3)
+        T (tokens[0] === 'name')
+        T (tokens[1] === 'email')
+        T (tokens[2] === 'email')
         done()
       })
     })
@@ -88,13 +88,13 @@ describe('tweezers', function(){
       fs.writeFileSync(testFile, data)
 
       tweezers.readFileAndExtractUniq(testFile, function(err, tokenObj) {
-        assert(tokenObj[testFile])
+        T (tokenObj[testFile])
         var tokens = tokenObj[testFile]
-        assert(tokens.length === tokenObj.tokens.length)
+        T (tokens.length === tokenObj.tokens.length)
 
-        assert(tokens.length === 2)
-        assert(tokens[0] === 'email')
-        assert(tokens[1] === 'name')
+        T (tokens.length === 2)
+        T (tokens[0] === 'email')
+        T (tokens[1] === 'name')
         done()
       })
     })
@@ -121,22 +121,22 @@ describe('tweezers', function(){
       fs.writeFileSync(testFile2, data2)
 
       tweezers.readFilesAndExtract([testFile, testFile2], function(err, tokenObj) {
-          assert(tokenObj[testFile])
-          assert(tokenObj[testFile2])
+          T (tokenObj[testFile])
+          T (tokenObj[testFile2])
 
           var tokens1 = tokenObj[testFile]
-          assert(tokens1.length === 3)
-          assert(tokens1[0] === 'name')
-          assert(tokens1[1] === 'email')
-          assert(tokens1[2] === 'email')
+          T (tokens1.length === 3)
+          T (tokens1[0] === 'name')
+          T (tokens1[1] === 'email')
+          T (tokens1[2] === 'email')
 
           var tokens2 = tokenObj[testFile2]
-          assert(tokens2.length === 3)
-          assert(tokens2[0] === 'project')
-          assert(tokens2[1] === 'name')
-          assert(tokens2[2] === 'email')
+          T (tokens2.length === 3)
+          T (tokens2[0] === 'project')
+          T (tokens2[1] === 'name')
+          T (tokens2[2] === 'email')
 
-          assert(tokenObj.tokens.length === 6)
+          T (tokenObj.tokens.length === 6)
 
           done()
       })            
@@ -164,21 +164,21 @@ describe('tweezers', function(){
       fs.writeFileSync(testFile2, data2)
 
       tweezers.readFilesAndExtractUniq([testFile, testFile2], function(err, tokenObj) {
-        assert(tokenObj[testFile])
-        assert(tokenObj[testFile2])
+        T (tokenObj[testFile])
+        T (tokenObj[testFile2])
 
         var tokens1 = tokenObj[testFile]
-        assert(tokens1.length === 2)
-        assert(tokens1[0] === 'email')
-        assert(tokens1[1] === 'name')
+        T (tokens1.length === 2)
+        T (tokens1[0] === 'email')
+        T (tokens1[1] === 'name')
 
         var tokens2 = tokenObj[testFile2]
-        assert(tokens2.length === 3)
-        assert(tokens2[0] === 'email')
-        assert(tokens2[1] === 'name')
-        assert(tokens2[2] === 'project')
+        T (tokens2.length === 3)
+        T (tokens2[0] === 'email')
+        T (tokens2[1] === 'name')
+        T (tokens2[2] === 'project')
 
-        assert(tokenObj.tokens.length === 3)
+        T (tokenObj.tokens.length === 3)
 
         done()
       })            
