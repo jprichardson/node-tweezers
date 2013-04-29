@@ -4,19 +4,11 @@ var assert = require('assert')
   , path = require('path-extra')
   , testutil = require('testutil')
 
-var TEST_DIR = path.join(path.tempdir(), 'test-tweezers')
+var TEST_DIR;
 
 describe('tweezers', function(){
-  beforeEach(function(done){
-    fs.exists(TEST_DIR, function(itDoes) {
-        if (itDoes) {
-            fs.remove(TEST_DIR, function(err) {
-                fs.mkdir(TEST_DIR, done)
-            })
-        } else {
-            fs.mkdir(TEST_DIR, done)
-        }
-    })
+  beforeEach(function(){
+    TEST_DIR = testutil.createTestDir('tweezers')
   })
 
 
