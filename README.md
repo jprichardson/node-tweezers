@@ -1,7 +1,7 @@
 Node.js - tweezers
 ==========================
 
-[![build status](https://secure.travis-ci.org/jprichardson/node-tweezers.png)](http://travis-ci.org/jprichardson/node-tweezers.js)
+[![build status](https://secure.travis-ci.org/jprichardson/node-tweezers.png)](http://travis-ci.org/jprichardson/node-tweezers)
 
 `tweezers` extracts your [mustache][1], [hogan.js][2], [handelbars][3] or any arbitrary tokens. It's colloquially named to stick with the "mustache" theme.
 
